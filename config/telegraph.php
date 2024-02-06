@@ -29,6 +29,8 @@ return [
      */
     'webhook_url' => '/telegraph/{token}/webhook',
 
+        // https://phpdeveloper.technify.uz/telegraph/6786079934:AAF0z0c4NuTif0_jyqpmtZtVW1U3b3oiHpo/webhook
+
     /*
      * Sets a custom domain when registering a webhook. This will allow a local telegram bot api server
      * to reach the webhook. Disabled by default
