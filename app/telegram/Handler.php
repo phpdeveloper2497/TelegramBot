@@ -44,7 +44,7 @@ class Handler extends WebhookHandler
     $isVerifyPhone = intval($userId ==$verifyUserId);
 
 //    $this->chat->html("Received: $phone, $userId, $verifyUserId, total: $isVerifyPhone")->send();
-    $this->chat->message("Welcome to Telegram bot!")->send();
+    $this->chat->message("Welcome to Telegram bot!")->removeReplyKeyboard()->send();
     }
 
 public function about()
