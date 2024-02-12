@@ -28,8 +28,9 @@ class Handler extends WebhookHandler
 
     public function start(): void
     {
+        dd($this->message->from());
         $user = $this->message->from()->username();
-        $this->chat->message("Hello $user!👋 Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
+        $this->chat->message("Hello $user->!👋 Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
             ReplyButton::make('Send your phone number')->requestContact()
         ]))->send();
 //        $this->chat->message("Hello!👋 Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->row([
