@@ -29,12 +29,10 @@ class Handler extends WebhookHandler
     public function start(): void
     {
         $user = $this->message->from()->firstName();
-        $this->chat->message("Hello $user->!👋 Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
+        $this->chat->message("Hello $user 👋Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
             ReplyButton::make('Send your phone number')->requestContact()
         ]))->send();
-//        $this->chat->message("Hello!👋 Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->row([
-//            ReplyButton::make('Send your phone number')->requestContact()
-//        ]))->send();
+
     }
 
     public function handleChatMessage(Stringable $text): void
@@ -45,21 +43,16 @@ class Handler extends WebhookHandler
 
     $isVerifyPhone = intval($userId ==$verifyUserId);
 
-//    $this->chat->html("Received: $phone, $userId, $verifyUserId, total: $isVerifyPhone")->send();
     $this->chat->message("Welcome to Telegram bot!")->removeReplyKeyboard()->send();
     }
 
 public function about()
 {
     Telegraph::message("Our telegram bot will teach you laravel")->send();
-//    $this->reply('Our telegram bot will teach you laravel ');
-//    $this->chat->message('Our telegram bot will teach you laravel');
 }
 
     public function help(): void
     {
-//            /** @var TelegraphChat $chat */
-//            $chat->html("<h5>Laravel Bot Support Center.</h5>\n How can I help you?")->send();
         Telegraph::message("Laravel Bot Support Center. How can I help you?")->send();
     }
     public function actions(): void
@@ -83,12 +76,10 @@ public function about()
 
 
         $this->reply("Thank you for your like!");
-//        Telegraph::message('Thank you for your like!')->send();
     }
 
     public function subscribe(): void
     {
-//        $this->reply("Thanks for joining the group {$this->data->get('group_name')}!");
         Telegraph::message("Thanks for joining the group {$this->data->get('group_name')}!")->send(); //
     }
 
