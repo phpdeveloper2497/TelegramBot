@@ -1,5 +1,6 @@
 <?php
 
+use DefStudio\Telegraph\Models\TelegraphBot;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
@@ -19,8 +20,8 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Artisan::command('tester', function () {
-    /** @var \DefStudio\Telegraph\Models\TelegraphBot $bot */
-    $bot = \DefStudio\Telegraph\Models\TelegraphBot::find(1);
+    /** @var TelegraphBot $bot */
+    $bot = TelegraphBot::find(1);
     dd($bot->registerCommands([
         'about' => 'About us',
         'actions' => 'What would you like',
