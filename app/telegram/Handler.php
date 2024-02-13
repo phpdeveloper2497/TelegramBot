@@ -43,10 +43,10 @@ class Handler extends WebhookHandler
 
     $isVerifyPhone = intval($userId ==$verifyUserId);
 
-    $this->chat->message("Welcome to our Telegram bot!")->removeReplyKeyboard()->send();
+    $this->chat->message("Welcome to our Telegram bot!!")->removeReplyKeyboard()->send();
     }
 
-public function about()
+public function about(): void
 {
     Telegraph::message("Our telegram bot will teach you laravel")->send();
 }
