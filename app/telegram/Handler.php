@@ -17,7 +17,7 @@ class Handler extends WebhookHandler
     public function handleUnknownCommand(Stringable $text): void
     {
 //        if ($text->value() === '/start') {
-//            $this->reply('Hello!👋  Welcome to Telegram bot!');
+//            $this->reply('Hello! Welcome to Telegram bot!');
 //        } else {
 //            $this->reply('Unknown command');
 //        }
@@ -29,7 +29,7 @@ class Handler extends WebhookHandler
     public function start(): void
     {
         $user = $this->message->from()->firstName();
-        $this->chat->message("Hello $user 👋Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
+        $this->chat->message("Hello $user 👋 ! Send your phone number for authorization!")->replyKeyboard(ReplyKeyboard::make()->oneTime()->buttons([
             ReplyButton::make('Send your phone number')->requestContact()
         ]))->send();
 
